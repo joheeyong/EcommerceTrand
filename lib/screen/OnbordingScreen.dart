@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../util/DotIndicatior.dart';
 import 'content/OnbordiingContent.dart';
 
@@ -19,15 +18,13 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
       image: "assets/Illustration/Illustration-0.png",
       imageDarkTheme: "assets/Illustration/Illustration_darkTheme_0.png",
       title: "Find the item you’ve \nbeen looking for",
-      description:
-      "Here you’ll see rich varieties of goods, carefully classified for seamless browsing experience.",
+      description: "Here you’ll see rich varieties of goods, carefully classified for seamless browsing experience.",
     ),
     Onbord(
       image: "assets/Illustration/Illustration-1.png",
       imageDarkTheme: "assets/Illustration/Illustration_darkTheme_1.png",
       title: "Get those shopping \nbags filled",
-      description:
-      "Add any item you want to your cart, or save it on your wishlist, so you don’t miss it in your future purchases.",
+      description: "Add any item you want to your cart, or save it on your wishlist, so you don’t miss it in your future purchases.",
     ),
     Onbord(
       image: "assets/Illustration/Illustration-2.png",
@@ -39,30 +36,32 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
       image: "assets/Illustration/Illustration-3.png",
       imageDarkTheme: "assets/Illustration/Illustration_darkTheme_3.png",
       title: "Package tracking",
-      description:
-      "In particular, Shoplon can pack your orders, and help you seamlessly manage your shipments.",
+      description: "In particular, Shoplon can pack your orders, and help you seamlessly manage your shipments.",
     ),
     Onbord(
       image: "assets/Illustration/Illustration-4.png",
       imageDarkTheme: "assets/Illustration/Illustration_darkTheme_4.png",
       title: "Nearby stores",
-      description:
-      "Easily track nearby shops, browse through their items and get information about their prodcuts.",
+      description: "Easily track nearby shops, browse through their items and get information about their prodcuts.",
     ),
   ];
 
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   void initState() {
-    _pageController = PageController(initialPage: 0);
     super.initState();
-    print("Onbording Screen");
+
+    _pageController = PageController(initialPage: 0);
   }
+
 
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +79,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                   },
                   child: Text(
                     "Skip",
-                    style: TextStyle(
-                        color: Theme.of(context).textTheme.bodyLarge!.color),
+                    style: TextStyle(color: Theme.of(context).textTheme.bodyLarge!.color),
                   ),
                 ),
               ),
@@ -97,10 +95,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                   itemBuilder: (context, index) => OnbordingContent(
                     title: _onbordData[index].title,
                     description: _onbordData[index].description,
-                    image: (Theme.of(context).brightness == Brightness.dark &&
-                        _onbordData[index].imageDarkTheme != null)
-                        ? _onbordData[index].imageDarkTheme!
-                        : _onbordData[index].image,
+                    image: (Theme.of(context).brightness == Brightness.dark && _onbordData[index].imageDarkTheme != null) ? _onbordData[index].imageDarkTheme! : _onbordData[index].image,
                     isTextOnTop: index.isOdd,
                   ),
                 ),
@@ -109,7 +104,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                 children: [
                   ...List.generate(
                     _onbordData.length,
-                        (index) => Padding(
+                    (index) => Padding(
                       padding: const EdgeInsets.only(right: 16 / 4),
                       child: DotIndicator(isActive: index == _pageIndex),
                     ),
@@ -121,8 +116,7 @@ class _OnBordingScreenState extends State<OnBordingScreen> {
                     child: ElevatedButton(
                       onPressed: () {
                         if (_pageIndex < _onbordData.length - 1) {
-                          _pageController.nextPage(
-                              curve: Curves.ease, duration: const Duration(milliseconds: 300));
+                          _pageController.nextPage(curve: Curves.ease, duration: const Duration(milliseconds: 300));
                         } else {
                           Navigator.pushNamed(context, "login");
                         }
