@@ -1,6 +1,8 @@
 import 'package:ecommercetrands/screen/auth/views/components/login_form.dart';
 import 'package:flutter/material.dart';
 
+import '../../../route/route_constants.dart';
+
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -53,43 +55,43 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(height: 16),
                   LogInForm(formKey: _formKey),
-                  // Align(
-                  //   child: TextButton(
-                  //     child: const Text("Forgot password"),
-                  //     onPressed: () {
-                  //       Navigator.pushNamed(
-                  //           context, passwordRecoveryScreenRoute);
-                  //     },
-                  //   ),
-                  // ),
-                  // SizedBox(
-                  //   height: size.height > 700
-                  //       ? size.height * 0.1
-                  //       : defaultPadding,
-                  // ),
-                  // ElevatedButton(
-                  //   onPressed: () {
-                  //     // if (_formKey.currentState!.validate()) {
-                  //     Navigator.pushNamedAndRemoveUntil(
-                  //         context,
-                  //         entryPointScreenRoute,
-                  //         ModalRoute.withName(logInScreenRoute));
-                  //     // }
-                  //   },
-                  //   child: const Text("Log in"),
-                  // ),
-                  // Row(
-                  //   mainAxisAlignment: MainAxisAlignment.center,
-                  //   children: [
-                  //     const Text("Don't have an account?"),
-                  //     TextButton(
-                  //       onPressed: () {
-                  //         Navigator.pushNamed(context, signUpScreenRoute);
-                  //       },
-                  //       child: const Text("Sign up"),
-                  //     )
-                  //   ],
-                  // ),
+                  Align(
+                    child: TextButton(
+                      child: const Text("Forgot password"),
+                      onPressed: () {
+                        Navigator.pushNamed(
+                            context, passwordRecoveryScreenRoute);
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: size.height > 700
+                        ? size.height * 0.1
+                        : 16,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      // if (_formKey.currentState!.validate()) {
+                      Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          entryPointScreenRoute,
+                          ModalRoute.withName(logInScreenRoute));
+                      // }
+                    },
+                    child: const Text("Log in"),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      const Text("Don't have an account?"),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, signUpScreenRoute);
+                        },
+                        child: const Text("Sign up"),
+                      )
+                    ],
+                  ),
                 ],
               ),
             )
