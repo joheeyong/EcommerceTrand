@@ -2,6 +2,8 @@ import 'package:animations/animations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import 'screen/home/views/home_screen.dart';
+
 
 class EntryPoint extends StatefulWidget {
   const EntryPoint({super.key});
@@ -12,6 +14,7 @@ class EntryPoint extends StatefulWidget {
 
 class _EntryPointState extends State<EntryPoint> {
   final List _pages = const [
+    HomeScreen()
   ];
   int _currentIndex = 0;
 
