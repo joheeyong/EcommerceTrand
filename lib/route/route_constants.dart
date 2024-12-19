@@ -4,3 +4,4 @@ const String signUpScreenRoute = "signup";
 const String termsOfServicesScreenRoute = "terms_of_services";
 const String entryPointScreenRoute = "entry_point";
 const String passwordRecoveryScreenRoute = "password_recovery";
+const String productDetailsScreenRoute = "product_details";

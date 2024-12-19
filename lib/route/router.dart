@@ -29,6 +29,13 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(
         builder: (context) => const EntryPoint(),
       );
+    case productDetailsScreenRoute:
+      return MaterialPageRoute(
+        builder: (context) {
+          bool isProductAvailable = settings.arguments as bool? ?? true;
+          return Container();
+        },
+      );
     default:
       return MaterialPageRoute(
         // Make a screen for undefine

@@ -1,5 +1,7 @@
 import 'package:ecommercetrands/components/Banner/banner_s_style_1.dart';
 import 'package:ecommercetrands/components/Banner/banner_s_style_5.dart';
+import 'package:ecommercetrands/screen/home/views/components/offer_carousel_and_categories.dart';
+import 'package:ecommercetrands/screen/home/views/components/popular_products.dart';
 import 'package:flutter/material.dart';
 // import 'components/best_sellers.dart';
 // import 'components/flash_sale.dart';
@@ -16,8 +18,8 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
-            // const SliverToBoxAdapter(child: OffersCarouselAndCategories()),
-            // const SliverToBoxAdapter(child: PopularProducts()),
+            const SliverToBoxAdapter(child: OffersCarouselAndCategories()),
+            const SliverToBoxAdapter(child: PopularProducts()),
             // const SliverPadding(
             //   padding: EdgeInsets.symmetric(vertical: 16 * 1.5),
             //   sliver: SliverToBoxAdapter(child: FlashSale()),
